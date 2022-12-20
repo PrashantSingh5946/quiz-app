@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import "./App.css";
 import questions from "./helpers/questions.js";
 import arrowUrl from "./assets/arrow.png"
+import Options from "./components/Options";
 function App() {
   const [isQuizRunning, setIsQuizRunning] = useState<boolean>(false);
   const [questionNo, setQuestionNo] = useState(0);
@@ -22,6 +23,7 @@ function App() {
             <div className="playground">
               <div className="question">{questions[questionNo].question}</div>
               <hr></hr>
+              <Options questionNo={questionNo} />
             </div>
             <div className="controls">
               {questionNo!=0 && <button onClick={prevQuestion}>Prev</button>}

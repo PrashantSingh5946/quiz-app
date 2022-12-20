@@ -7,7 +7,7 @@
 		questionoption: option[],
 	}
 
-	type option = {
+	export type option = {
 		optionid: number,
 			optionvalue: string,
 			price: number,

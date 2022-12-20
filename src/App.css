@@ -40,6 +40,19 @@
     padding-top: 40px;
 }
 
+.playground .answers{
+    height: 360px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.playground .answers textarea{
+    width:80%;
+    height: 80%;
+    margin-left: 70px;
+    margin-top: 20px;
+}
+
 .stage .exitContainer{
     padding-top: 10px;
     padding-left: 10px;
