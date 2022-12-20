@@ -1,0 +1,80 @@
+.App{
+    width: 100vw;
+    height: 100vh;
+    background-color: #cbcbcb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quiz{
+    width: 800px;
+    height: 580px;
+    background: rgb(236, 234, 234);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stage{
+    width: 100%;
+    height: 100%;
+}
+
+#startQuiz{
+    background-color: #0074d9;
+    color: white;
+}
+
+.playground{
+    width: 100%;
+    height: 500px;
+    background-color: #fff;
+}
+
+.playground .question{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    padding-top: 40px;
+}
+
+.stage .exitContainer{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.stage .exitContainer img{
+width: 20px;
+}
+
+.stage .controls {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    box-sizing: content-box;
+}
+
+.stage .controls button {
+    height:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.stage .controls .nextQuestion{
+    background-color: red;
+    color: white; 
+}
+
+.stage .controls .submitQuiz{
+    background-color: green;
+    color: white; 
+}
+
+.stage .controls .separator{
+    width: 100%;
+}
