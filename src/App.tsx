@@ -10,6 +10,11 @@ function App() {
   const [questionNo, setQuestionNo] = useState<number>(0);
   const [state,setState] = useState(data);
 
+  function reset()
+  {
+    setState(data);
+    setIsQuizRunning(false);
+  }
   
   const nextQuestion = () =>
     questionNo + 1 < state.length ? setQuestionNo((val) => val + 1) : null;
@@ -25,7 +30,7 @@ function App() {
         {isQuizRunning ? (
           <div className="stage">
             <div className="exitContainer">
-              <div onClick={()=>{}}><img src={arrowUrl}/></div>
+              <div onClick={()=>{reset()}}><img src={arrowUrl}/></div>
             </div>
             <div className="playground">
               <div className="question">{state[questionNo].question}</div>
