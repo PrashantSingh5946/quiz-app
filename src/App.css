@@ -91,3 +91,7 @@ width: 20px;
 .stage .controls .separator{
     width: 100%;
 }
+
+.summary{
+    background: #fff;
+}
