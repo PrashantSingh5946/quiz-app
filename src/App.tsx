@@ -19,6 +19,7 @@ function App() {
   function reset() {
     setState(data);
     setIsQuizRunning(false);
+    setIsSubmitted(false);
   }
 
   const nextQuestion = () =>
@@ -62,7 +63,7 @@ function App() {
                   {questionNo === state.length - 1 && (
                     <button
                       onClick={() => {
-                        alert("Data Submitted");
+                        setIsSubmitted(true);
                       }}
                       className="submitQuiz"
                     >
@@ -85,14 +86,18 @@ function App() {
             )}
           </div>
         ) : (
-          <div className="summary" onClick={(e)=>{e.preventDefault();}}>
+          <div className="summary">
+            <h2 className="heading">Your responses are</h2>
             {state.map((question, index) => (
-              <div key={index}>
+              <div key={index} onClick={(e)=>{e.preventDefault();}}>
                 <div>{question.question}</div>
               <Options  questionNo={index}></Options>
               <hr/>
               </div>
             ))}
+            <div>
+              <button style={{background:"red",color:"white"}}onClick={reset}>Reset</button>
+            </div>
           </div>
         )}
       </QuizContext.Provider>
