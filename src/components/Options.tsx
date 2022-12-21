@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { QuizContext } from "../App";
+import { question } from "../helpers/questions";
 type props = {
   questionNo: number;
 };
@@ -7,7 +8,7 @@ type props = {
 export default function Options({ questionNo }: props) {
 
   function mcqHandler(index: number) {
-    let newState = JSON.parse(JSON.stringify(state));
+    let newState:[question] = JSON.parse(JSON.stringify(state));
     newState[questionNo].questionoption.forEach((element) => {
       element.selected = false;
     });
@@ -16,21 +17,21 @@ export default function Options({ questionNo }: props) {
   }
 
   function checkboxHandler(index:number){
-    let newState = JSON.parse(JSON.stringify(state));
+    let newState:[question] = JSON.parse(JSON.stringify(state));
     newState[questionNo].questionoption[index].selected=!newState[questionNo].questionoption[index].selected;
     setState(newState);
 
 }
 
 function dateHandler(val:string){
-    let newState = JSON.parse(JSON.stringify(state));
+    let newState:[question] = JSON.parse(JSON.stringify(state));
     newState[questionNo].questionoption[0].optionvalue=val;
     setState(newState);
 
 }
 
 function textareaHandler(val:string){
-    let newState = JSON.parse(JSON.stringify(state));
+    let newState:[question] = JSON.parse(JSON.stringify(state));
     newState[questionNo].questionoption[0].optionvalue=val;
     setState(newState);
 }

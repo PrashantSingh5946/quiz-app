@@ -1,20 +1,21 @@
-import { useState, createContext } from "react";
+import React, { useState, createContext } from "react";
 import "./App.css";
-import data from "./helpers/questions.js";
+import data, { question } from "./helpers/questions.js";
 import arrowUrl from "./assets/arrow.png";
 import Options from "./components/Options";
 
 export const QuizContext = createContext({
   isQuizRunning: false,
   questionNo: 0,
-  state: [...data],
-  setState: () => {},
+  state: data,
+  setState: (state:question[]) => {},
 });
+
 function App() {
   const [isQuizRunning, setIsQuizRunning] = useState<boolean>(false);
   const [questionNo, setQuestionNo] = useState<number>(0);
-  const [state, setState] = useState(data);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [state, setState] = useState<question[]>(data);
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
   function reset() {
     setState(data);
